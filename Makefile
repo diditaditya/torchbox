@@ -4,6 +4,9 @@ build:
 run:
 	docker run --runtime=nvidia -p 8080:8080 -v $(PWD)/nb:/torchbox/nb  -i -d --name "torchbox" torchbox
 
+start:
+	docker start torchbox
+
 bash:
 	docker exec -it torchbox bash
 
