@@ -2,7 +2,7 @@ build:
 	docker build -t torchbox .
 
 run:
-	docker run --runtime=nvidia -p 8080:8080 -v $(PWD)/nb:/torchbox/nb  -i -d --name "torchbox" torchbox
+	docker run --runtime=nvidia -p 8080:8080 -v $(PWD)/nb:/torchbox/nb  -i -d --shm-size 8G --name "torchbox" torchbox
 
 start:
 	docker start torchbox
