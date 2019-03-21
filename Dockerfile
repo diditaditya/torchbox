@@ -17,7 +17,7 @@ RUN pip3 install torch torchvision torchtext
 RUN python3 -m spacy download en
 
 # uncomment the following if kaggle.json is provided
-COPY ./kaggle.json ~/.kaggle/
+# COPY ./kaggle.json ~/.kaggle/
 
 WORKDIR /torchbox
 
