@@ -1,0 +1,29 @@
+version: '2.3'
+
+services:
+  torchbox:
+    build: .
+    image: torchbox
+    container_name: torchbox
+    runtime: nvidia
+    shm_size: '8gb'
+    expose:
+      - 8888
+    volumes:
+      - ${PWD}/nb:/torchbox/nb
+      - ${PWD}/data:/torchbox/data
+    labels:
+      - "traefik.http.routers.torchbox.rule=Host(`${JUPYTER_HOSTNAME}`)"
+      - "traefik.http.services.torchbox.loadbalancer.server.port=8888"
+    command: [
+      "jupyter",
+      "notebook",
+      "--ip=0.0.0.0",
+      "--allow-root",
+      "--no-browser"
+    ]
+
+networks:
+  default:
+    external:
+      name: traefik_default
