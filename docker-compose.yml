@@ -7,6 +7,7 @@ services:
     container_name: torchbox
     runtime: nvidia
     shm_size: '8gb'
+    restart: always
     expose:
       - 8888
     volumes:
