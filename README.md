@@ -19,6 +19,12 @@ Follow the instruction [here](https://github.com/NVIDIA/nvidia-docker).
 
 ### set nvidia runtime
 
+Install `nvidia-container-runtime`
+
+```sh
+$ sudo apt install nvidia-container-runtime
+```
+
 Set the runtime in `/etc/docker/daemon.json`.
 
 ```json
