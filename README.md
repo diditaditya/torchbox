@@ -38,6 +38,12 @@ Set the runtime in `/etc/docker/daemon.json`.
 }
 ```
 
+Restart `docker`.
+
+```sh
+$ sudo systemctl restart docker
+```
+
 ### what you get
 
 Just a container which successfully runs the lesson 1 of the course no problem. lol.
