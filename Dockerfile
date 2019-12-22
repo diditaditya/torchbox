@@ -24,4 +24,4 @@ RUN jupyter notebook --generate-config
 
 WORKDIR /torchbox
 
-EXPOSE 8080
+EXPOSE 8888
